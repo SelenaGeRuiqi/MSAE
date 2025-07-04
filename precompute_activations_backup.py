@@ -154,12 +154,7 @@ class HFDataset(Dataset):
     """
     def __init__(self, dataset, preprocess, split, download_full=False, **kwargs):
         stream = not download_full
-        try:
-            self.dataset = load_dataset(dataset, split=split, streaming=stream,
-                                    trust_remote_code=True, **kwargs)
-        except Exception as e:
-            print(f"Warning: Failed to load {split} split, trying with verification disabled")
-            self.dataset = load_dataset(dataset, split=split, streaming=stream, verification_mode='no_checks',
+        self.dataset = load_dataset(dataset, split=split, streaming=stream, 
                                     trust_remote_code=True, **kwargs)
         self.preprocess = preprocess
         self.len: int = 0  # Will be set by child classes

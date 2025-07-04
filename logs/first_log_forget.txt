@@ -1,0 +1,425 @@
+(MSAE_env) selena@node02:/data/selena/MSAE$ python train.py   -dt data/imagenet_ViT-B~32_train_image_1281167_512.npy   -ds data/imagenet_ViT-B~32_validation_image_50000_512.npy   -m MSAE_UW   -a ""   -e 10   -ef 8
+2025-07-02 14:11:31,467 - __main__ - INFO - Starting training with the following arguments:
+2025-07-02 14:11:31,467 - __main__ - INFO - Namespace(dataset_train='data/imagenet_ViT-B~32_train_image_1281167_512.npy', dataset_test='data/imagenet_ViT-B~32_validation_image_50000_512.npy', dataset_second_modality=None, model='MSAE_UW', activation='', epochs=10, expansion_factor=8.0)
+2025-07-02 14:11:31,497 - __main__ - INFO - Using device: cuda
+2025-07-02 14:11:33,893 - __main__ - INFO - Training dataset length: 1281167, Evaluation dataset length: 50000, Embedding size: 512
+2025-07-02 14:11:33,894 - __main__ - INFO - Training dataset mean center: -0.006694096140563488, Scaling factor: 0.3985883316851313 with target norm 22.627416997969522
+2025-07-02 14:11:33,895 - __main__ - INFO - Evaluation dataset mean center: -0.007358074653893709, Scaling factor: 0.39980849227484905 with target norm 22.627416997969522
+2025-07-02 14:11:33,895 - __main__ - INFO - Expansion factor: 8.0, Latent dimensions: 4096
+2025-07-02 14:11:33,895 - __main__ - INFO - Generating nesting list from 64 to 4096
+2025-07-02 14:11:33,895 - __main__ - INFO - Using Matryoshka with nesting list: [64, 128, 256, 512, 1024, 2048, 4096] and weighting function: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2025-07-02 14:11:33,895 - __main__ - INFO - Calculating bias initialization with median: False
+2025-07-02 14:11:33,895 - __main__ - INFO - Bias initialization: 0.0
+/data/selena/miniconda3/envs/MSAE_env/lib/python3.10/site-packages/transformers/utils/hub.py:128: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+2025-07-02 14:11:34,817 - __main__ - INFO - Epoch 1/10
+Training:  32%|█████████████████████▏                                             | 99/313 [00:18<00:38,  5.52it/s]2025-07-02 14:11:53,321 - __main__ - INFO - Epoch: 1, Step: 99, Loss: 0.324239, Recon Loss: 0.646745, Sparse Loss: 23.840195
+2025-07-02 14:11:53,321 - __main__ - INFO - FVU Sparse: 0.6467, FVU All: 0.1540
+2025-07-02 14:11:53,321 - __main__ - INFO - CKNNA Sparse: 0.5103, CKNNA All: 0.7723
+2025-07-02 14:11:53,321 - __main__ - INFO - Cosine Similarity Sparse: 0.6654, MAE Distance Sparse: 2.4066
+2025-07-02 14:11:53,321 - __main__ - INFO - Cosine Similarity All: 0.9206, MAE Distance All: 1.1671
+2025-07-02 14:11:53,321 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4257
+2025-07-02 14:11:53,321 - __main__ - INFO - Orthogonal Decoder Loss: 0.001951
+Training:  64%|█████████████████████████████████████████▉                        | 199/313 [00:36<00:20,  5.51it/s]2025-07-02 14:12:11,624 - __main__ - INFO - Epoch: 1, Step: 199, Loss: 0.228293, Recon Loss: 0.513465, Sparse Loss: 35.069214
+2025-07-02 14:12:11,624 - __main__ - INFO - FVU Sparse: 0.5135, FVU All: 0.0617
+2025-07-02 14:12:11,624 - __main__ - INFO - CKNNA Sparse: 0.5138, CKNNA All: 0.8818
+2025-07-02 14:12:11,624 - __main__ - INFO - Cosine Similarity Sparse: 0.7190, MAE Distance Sparse: 2.1426
+2025-07-02 14:12:11,625 - __main__ - INFO - Cosine Similarity All: 0.9696, MAE Distance All: 0.7339
+2025-07-02 14:12:11,625 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.3982
+2025-07-02 14:12:11,625 - __main__ - INFO - Orthogonal Decoder Loss: 0.001955
+Training:  96%|███████████████████████████████████████████████████████████████   | 299/313 [00:54<00:02,  5.37it/s]2025-07-02 14:12:29,955 - __main__ - INFO - Epoch: 1, Step: 299, Loss: 0.188557, Recon Loss: 0.444836, Sparse Loss: 35.651451
+2025-07-02 14:12:29,955 - __main__ - INFO - FVU Sparse: 0.4448, FVU All: 0.0369
+2025-07-02 14:12:29,955 - __main__ - INFO - CKNNA Sparse: 0.5647, CKNNA All: 0.9106
+2025-07-02 14:12:29,955 - __main__ - INFO - Cosine Similarity Sparse: 0.7545, MAE Distance Sparse: 1.9963
+2025-07-02 14:12:29,955 - __main__ - INFO - Cosine Similarity All: 0.9821, MAE Distance All: 0.5638
+2025-07-02 14:12:29,955 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.3995
+2025-07-02 14:12:29,955 - __main__ - INFO - Orthogonal Decoder Loss: 0.001961
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:57<00:00,  5.44it/s]
+2025-07-02 14:12:32,366 - __main__ - INFO - Epoch: 1, Learning Rate: 0.000100, Loss: 0.184568, Recon Loss: 0.438260, Sparse Loss: 35.275692, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.99it/s]
+2025-07-02 14:12:34,227 - __main__ - INFO - Evaluation results:
+2025-07-02 14:12:34,228 - __main__ - INFO -   Loss: 0.034963
+2025-07-02 14:12:34,228 - __main__ - INFO -   Reconstruction Loss: 0.034963
+2025-07-02 14:12:34,228 - __main__ - INFO -   Sparsity Loss: 35.235090
+2025-07-02 14:12:34,228 - __main__ - INFO -   FVU Sparse: 0.4396
+2025-07-02 14:12:34,228 - __main__ - INFO -   FVU All: 0.0350
+2025-07-02 14:12:34,228 - __main__ - INFO -   CKNNA Sparse: 0.5786
+2025-07-02 14:12:34,228 - __main__ - INFO -   CKNNA All: 0.9111
+2025-07-02 14:12:34,228 - __main__ - INFO -   Cosine Similarity Sparse: 0.7575
+2025-07-02 14:12:34,228 - __main__ - INFO -   MAE Distance Sparse: 1.9862
+2025-07-02 14:12:34,228 - __main__ - INFO -   Cosine Similarity All: 0.9831
+2025-07-02 14:12:34,228 - __main__ - INFO -   MAE Distance All: 0.5497
+2025-07-02 14:12:34,228 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:12:34,228 - __main__ - INFO -   Sparsity All: 0.4013
+2025-07-02 14:12:34,228 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001962
+2025-07-02 14:12:34,228 - __main__ - INFO - Epoch 2/10
+Training:  27%|██████████████████▍                                                | 86/313 [00:15<00:41,  5.50it/s]2025-07-02 14:12:50,320 - __main__ - INFO - Epoch: 2, Step: 86, Loss: 0.161534, Recon Loss: 0.399316, Sparse Loss: 33.253723
+2025-07-02 14:12:50,320 - __main__ - INFO - FVU Sparse: 0.3993, FVU All: 0.0267
+2025-07-02 14:12:50,320 - __main__ - INFO - CKNNA Sparse: 0.6059, CKNNA All: 0.9217
+2025-07-02 14:12:50,320 - __main__ - INFO - Cosine Similarity Sparse: 0.7812, MAE Distance Sparse: 1.8917
+2025-07-02 14:12:50,320 - __main__ - INFO - Cosine Similarity All: 0.9872, MAE Distance All: 0.4770
+2025-07-02 14:12:50,320 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4118
+2025-07-02 14:12:50,320 - __main__ - INFO - Orthogonal Decoder Loss: 0.001968
+Training:  59%|███████████████████████████████████████▏                          | 186/313 [00:34<00:23,  5.44it/s]2025-07-02 14:13:08,645 - __main__ - INFO - Epoch: 2, Step: 186, Loss: 0.144144, Recon Loss: 0.370483, Sparse Loss: 31.085817
+2025-07-02 14:13:08,645 - __main__ - INFO - FVU Sparse: 0.3705, FVU All: 0.0216
+2025-07-02 14:13:08,645 - __main__ - INFO - CKNNA Sparse: 0.6306, CKNNA All: 0.9282
+2025-07-02 14:13:08,646 - __main__ - INFO - Cosine Similarity Sparse: 0.7979, MAE Distance Sparse: 1.8180
+2025-07-02 14:13:08,646 - __main__ - INFO - Cosine Similarity All: 0.9896, MAE Distance All: 0.4259
+2025-07-02 14:13:08,646 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4252
+2025-07-02 14:13:08,646 - __main__ - INFO - Orthogonal Decoder Loss: 0.001973
+Training:  91%|████████████████████████████████████████████████████████████▎     | 286/313 [00:52<00:04,  5.48it/s]2025-07-02 14:13:27,060 - __main__ - INFO - Epoch: 2, Step: 286, Loss: 0.131042, Recon Loss: 0.346296, Sparse Loss: 29.320953
+2025-07-02 14:13:27,061 - __main__ - INFO - FVU Sparse: 0.3463, FVU All: 0.0187
+2025-07-02 14:13:27,061 - __main__ - INFO - CKNNA Sparse: 0.6540, CKNNA All: 0.9324
+2025-07-02 14:13:27,061 - __main__ - INFO - Cosine Similarity Sparse: 0.8119, MAE Distance Sparse: 1.7586
+2025-07-02 14:13:27,061 - __main__ - INFO - Cosine Similarity All: 0.9910, MAE Distance All: 0.3942
+2025-07-02 14:13:27,061 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4365
+2025-07-02 14:13:27,061 - __main__ - INFO - Orthogonal Decoder Loss: 0.001978
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:57<00:00,  5.43it/s]
+2025-07-02 14:13:31,840 - __main__ - INFO - Epoch: 2, Learning Rate: 0.000100, Loss: 0.128680, Recon Loss: 0.341347, Sparse Loss: 29.011452, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.68it/s]
+2025-07-02 14:13:33,788 - __main__ - INFO - Evaluation results:
+2025-07-02 14:13:33,788 - __main__ - INFO -   Loss: 0.018166
+2025-07-02 14:13:33,788 - __main__ - INFO -   Reconstruction Loss: 0.018166
+2025-07-02 14:13:33,788 - __main__ - INFO -   Sparsity Loss: 29.033111
+2025-07-02 14:13:33,789 - __main__ - INFO -   FVU Sparse: 0.3422
+2025-07-02 14:13:33,789 - __main__ - INFO -   FVU All: 0.0182
+2025-07-02 14:13:33,789 - __main__ - INFO -   CKNNA Sparse: 0.6629
+2025-07-02 14:13:33,789 - __main__ - INFO -   CKNNA All: 0.9364
+2025-07-02 14:13:33,789 - __main__ - INFO -   Cosine Similarity Sparse: 0.8142
+2025-07-02 14:13:33,789 - __main__ - INFO -   MAE Distance Sparse: 1.7502
+2025-07-02 14:13:33,789 - __main__ - INFO -   Cosine Similarity All: 0.9912
+2025-07-02 14:13:33,789 - __main__ - INFO -   MAE Distance All: 0.3881
+2025-07-02 14:13:33,789 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:13:33,789 - __main__ - INFO -   Sparsity All: 0.4398
+2025-07-02 14:13:33,789 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001979
+2025-07-02 14:13:33,789 - __main__ - INFO - Epoch 3/10
+Training:  23%|███████████████▋                                                   | 73/313 [00:13<00:43,  5.46it/s]2025-07-02 14:13:47,482 - __main__ - INFO - Epoch: 3, Step: 73, Loss: 0.121141, Recon Loss: 0.327715, Sparse Loss: 28.113121
+2025-07-02 14:13:47,482 - __main__ - INFO - FVU Sparse: 0.3277, FVU All: 0.0167
+2025-07-02 14:13:47,483 - __main__ - INFO - CKNNA Sparse: 0.6652, CKNNA All: 0.9382
+2025-07-02 14:13:47,483 - __main__ - INFO - Cosine Similarity Sparse: 0.8227, MAE Distance Sparse: 1.7119
+2025-07-02 14:13:47,483 - __main__ - INFO - Cosine Similarity All: 0.9920, MAE Distance All: 0.3694
+2025-07-02 14:13:47,483 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4457
+2025-07-02 14:13:47,483 - __main__ - INFO - Orthogonal Decoder Loss: 0.001981
+Training:  55%|████████████████████████████████████▍                             | 173/313 [00:32<00:29,  4.74it/s]2025-07-02 14:14:05,998 - __main__ - INFO - Epoch: 3, Step: 173, Loss: 0.114238, Recon Loss: 0.314662, Sparse Loss: 27.074800
+2025-07-02 14:14:05,999 - __main__ - INFO - FVU Sparse: 0.3147, FVU All: 0.0156
+2025-07-02 14:14:05,999 - __main__ - INFO - CKNNA Sparse: 0.6750, CKNNA All: 0.9383
+2025-07-02 14:14:05,999 - __main__ - INFO - Cosine Similarity Sparse: 0.8301, MAE Distance Sparse: 1.6743
+2025-07-02 14:14:05,999 - __main__ - INFO - Cosine Similarity All: 0.9925, MAE Distance All: 0.3544
+2025-07-02 14:14:05,999 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4547
+2025-07-02 14:14:05,999 - __main__ - INFO - Orthogonal Decoder Loss: 0.001984
+Training:  87%|█████████████████████████████████████████████████████████▌        | 273/313 [00:50<00:07,  5.46it/s]2025-07-02 14:14:24,414 - __main__ - INFO - Epoch: 3, Step: 273, Loss: 0.108043, Recon Loss: 0.302098, Sparse Loss: 26.321247
+2025-07-02 14:14:24,415 - __main__ - INFO - FVU Sparse: 0.3021, FVU All: 0.0146
+2025-07-02 14:14:24,415 - __main__ - INFO - CKNNA Sparse: 0.6935, CKNNA All: 0.9406
+2025-07-02 14:14:24,415 - __main__ - INFO - Cosine Similarity Sparse: 0.8371, MAE Distance Sparse: 1.6404
+2025-07-02 14:14:24,415 - __main__ - INFO - Cosine Similarity All: 0.9929, MAE Distance All: 0.3414
+2025-07-02 14:14:24,415 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4610
+2025-07-02 14:14:24,415 - __main__ - INFO - Orthogonal Decoder Loss: 0.001986
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:57<00:00,  5.41it/s]
+2025-07-02 14:14:31,689 - __main__ - INFO - Epoch: 3, Learning Rate: 0.000100, Loss: 0.106342, Recon Loss: 0.298753, Sparse Loss: 25.957672, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.93it/s]
+2025-07-02 14:14:33,565 - __main__ - INFO - Evaluation results:
+2025-07-02 14:14:33,565 - __main__ - INFO -   Loss: 0.014433
+2025-07-02 14:14:33,565 - __main__ - INFO -   Reconstruction Loss: 0.014433
+2025-07-02 14:14:33,565 - __main__ - INFO -   Sparsity Loss: 26.037010
+2025-07-02 14:14:33,565 - __main__ - INFO -   FVU Sparse: 0.2992
+2025-07-02 14:14:33,565 - __main__ - INFO -   FVU All: 0.0144
+2025-07-02 14:14:33,565 - __main__ - INFO -   CKNNA Sparse: 0.7017
+2025-07-02 14:14:33,565 - __main__ - INFO -   CKNNA All: 0.9435
+2025-07-02 14:14:33,565 - __main__ - INFO -   Cosine Similarity Sparse: 0.8387
+2025-07-02 14:14:33,565 - __main__ - INFO -   MAE Distance Sparse: 1.6352
+2025-07-02 14:14:33,565 - __main__ - INFO -   Cosine Similarity All: 0.9930
+2025-07-02 14:14:33,565 - __main__ - INFO -   MAE Distance All: 0.3394
+2025-07-02 14:14:33,565 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:14:33,565 - __main__ - INFO -   Sparsity All: 0.4640
+2025-07-02 14:14:33,565 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001986
+2025-07-02 14:14:33,566 - __main__ - INFO - Epoch 4/10
+Training:  19%|████████████▊                                                      | 60/313 [00:11<00:46,  5.48it/s]2025-07-02 14:14:44,884 - __main__ - INFO - Number of dead neurons: 0
+2025-07-02 14:14:44,884 - __main__ - INFO - Epoch: 4, Step: 60, Loss: 0.103394, Recon Loss: 0.293041, Sparse Loss: 25.591007
+2025-07-02 14:14:44,884 - __main__ - INFO - FVU Sparse: 0.2931, FVU All: 0.0139
+2025-07-02 14:14:44,884 - __main__ - INFO - CKNNA Sparse: 0.7022, CKNNA All: 0.9426
+2025-07-02 14:14:44,884 - __main__ - INFO - Cosine Similarity Sparse: 0.8422, MAE Distance Sparse: 1.6177
+2025-07-02 14:14:44,884 - __main__ - INFO - Cosine Similarity All: 0.9933, MAE Distance All: 0.3326
+2025-07-02 14:14:44,884 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4675
+2025-07-02 14:14:44,884 - __main__ - INFO - Orthogonal Decoder Loss: 0.001986
+Training:  51%|█████████████████████████████████▋                                | 160/313 [00:29<00:27,  5.48it/s]2025-07-02 14:15:03,311 - __main__ - INFO - Epoch: 4, Step: 160, Loss: 0.098257, Recon Loss: 0.280841, Sparse Loss: 24.983915
+2025-07-02 14:15:03,312 - __main__ - INFO - FVU Sparse: 0.2809, FVU All: 0.0135
+2025-07-02 14:15:03,312 - __main__ - INFO - CKNNA Sparse: 0.7055, CKNNA All: 0.9397
+2025-07-02 14:15:03,312 - __main__ - INFO - Cosine Similarity Sparse: 0.8492, MAE Distance Sparse: 1.5786
+2025-07-02 14:15:03,312 - __main__ - INFO - Cosine Similarity All: 0.9935, MAE Distance All: 0.3257
+2025-07-02 14:15:03,312 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4718
+2025-07-02 14:15:03,312 - __main__ - INFO - Orthogonal Decoder Loss: 0.001987
+Training:  83%|██████████████████████████████████████████████████████▊           | 260/313 [00:47<00:09,  5.47it/s]2025-07-02 14:15:21,649 - __main__ - INFO - Epoch: 4, Step: 260, Loss: 0.095616, Recon Loss: 0.275598, Sparse Loss: 24.601856
+2025-07-02 14:15:21,650 - __main__ - INFO - FVU Sparse: 0.2756, FVU All: 0.0132
+2025-07-02 14:15:21,650 - __main__ - INFO - CKNNA Sparse: 0.7097, CKNNA All: 0.9405
+2025-07-02 14:15:21,650 - __main__ - INFO - Cosine Similarity Sparse: 0.8521, MAE Distance Sparse: 1.5630
+2025-07-02 14:15:21,650 - __main__ - INFO - Cosine Similarity All: 0.9936, MAE Distance All: 0.3214
+2025-07-02 14:15:21,650 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4766
+2025-07-02 14:15:21,650 - __main__ - INFO - Orthogonal Decoder Loss: 0.001986
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:57<00:00,  5.42it/s]
+2025-07-02 14:15:31,264 - __main__ - INFO - Epoch: 4, Learning Rate: 0.000100, Loss: 0.094144, Recon Loss: 0.272613, Sparse Loss: 24.316504, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.67it/s]
+2025-07-02 14:15:33,213 - __main__ - INFO - Evaluation results:
+2025-07-02 14:15:33,213 - __main__ - INFO -   Loss: 0.013025
+2025-07-02 14:15:33,213 - __main__ - INFO -   Reconstruction Loss: 0.013025
+2025-07-02 14:15:33,213 - __main__ - INFO -   Sparsity Loss: 24.464499
+2025-07-02 14:15:33,213 - __main__ - INFO -   FVU Sparse: 0.2747
+2025-07-02 14:15:33,213 - __main__ - INFO -   FVU All: 0.0130
+2025-07-02 14:15:33,213 - __main__ - INFO -   CKNNA Sparse: 0.7228
+2025-07-02 14:15:33,213 - __main__ - INFO -   CKNNA All: 0.9457
+2025-07-02 14:15:33,213 - __main__ - INFO -   Cosine Similarity Sparse: 0.8525
+2025-07-02 14:15:33,213 - __main__ - INFO -   MAE Distance Sparse: 1.5655
+2025-07-02 14:15:33,213 - __main__ - INFO -   Cosine Similarity All: 0.9937
+2025-07-02 14:15:33,213 - __main__ - INFO -   MAE Distance All: 0.3193
+2025-07-02 14:15:33,213 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:15:33,213 - __main__ - INFO -   Sparsity All: 0.4799
+2025-07-02 14:15:33,213 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001986
+2025-07-02 14:15:33,213 - __main__ - INFO - Epoch 5/10
+Training:  15%|██████████                                                         | 47/313 [00:08<00:48,  5.47it/s]2025-07-02 14:15:42,063 - __main__ - INFO - Epoch: 5, Step: 47, Loss: 0.092459, Recon Loss: 0.268715, Sparse Loss: 24.133102
+2025-07-02 14:15:42,063 - __main__ - INFO - FVU Sparse: 0.2687, FVU All: 0.0129
+2025-07-02 14:15:42,063 - __main__ - INFO - CKNNA Sparse: 0.7183, CKNNA All: 0.9432
+2025-07-02 14:15:42,063 - __main__ - INFO - Cosine Similarity Sparse: 0.8560, MAE Distance Sparse: 1.5468
+2025-07-02 14:15:42,063 - __main__ - INFO - Cosine Similarity All: 0.9938, MAE Distance All: 0.3172
+2025-07-02 14:15:42,063 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4820
+2025-07-02 14:15:42,063 - __main__ - INFO - Orthogonal Decoder Loss: 0.001985
+Training:  47%|██████████████████████████████▉                                   | 147/313 [00:27<00:30,  5.44it/s]2025-07-02 14:16:00,519 - __main__ - INFO - Epoch: 5, Step: 147, Loss: 0.090089, Recon Loss: 0.264277, Sparse Loss: 23.926956
+2025-07-02 14:16:00,519 - __main__ - INFO - FVU Sparse: 0.2643, FVU All: 0.0125
+2025-07-02 14:16:00,519 - __main__ - INFO - CKNNA Sparse: 0.7205, CKNNA All: 0.9438
+2025-07-02 14:16:00,519 - __main__ - INFO - Cosine Similarity Sparse: 0.8584, MAE Distance Sparse: 1.5317
+2025-07-02 14:16:00,519 - __main__ - INFO - Cosine Similarity All: 0.9939, MAE Distance All: 0.3119
+2025-07-02 14:16:00,519 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4853
+2025-07-02 14:16:00,519 - __main__ - INFO - Orthogonal Decoder Loss: 0.001983
+Training:  79%|████████████████████████████████████████████████████              | 247/313 [00:45<00:12,  5.48it/s]2025-07-02 14:16:18,964 - __main__ - INFO - Epoch: 5, Step: 247, Loss: 0.087909, Recon Loss: 0.258500, Sparse Loss: 23.519169
+2025-07-02 14:16:18,964 - __main__ - INFO - FVU Sparse: 0.2585, FVU All: 0.0125
+2025-07-02 14:16:18,964 - __main__ - INFO - CKNNA Sparse: 0.7340, CKNNA All: 0.9478
+2025-07-02 14:16:18,964 - __main__ - INFO - Cosine Similarity Sparse: 0.8616, MAE Distance Sparse: 1.5165
+2025-07-02 14:16:18,964 - __main__ - INFO - Cosine Similarity All: 0.9940, MAE Distance All: 0.3117
+2025-07-02 14:16:18,964 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4891
+2025-07-02 14:16:18,964 - __main__ - INFO - Orthogonal Decoder Loss: 0.001981
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:57<00:00,  5.42it/s]
+2025-07-02 14:16:30,952 - __main__ - INFO - Epoch: 5, Learning Rate: 0.000100, Loss: 0.086386, Recon Loss: 0.255839, Sparse Loss: 23.436188, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.97it/s]
+2025-07-02 14:16:32,818 - __main__ - INFO - Evaluation results:
+2025-07-02 14:16:32,819 - __main__ - INFO -   Loss: 0.012242
+2025-07-02 14:16:32,819 - __main__ - INFO -   Reconstruction Loss: 0.012242
+2025-07-02 14:16:32,819 - __main__ - INFO -   Sparsity Loss: 23.542662
+2025-07-02 14:16:32,819 - __main__ - INFO -   FVU Sparse: 0.2583
+2025-07-02 14:16:32,819 - __main__ - INFO -   FVU All: 0.0122
+2025-07-02 14:16:32,819 - __main__ - INFO -   CKNNA Sparse: 0.7396
+2025-07-02 14:16:32,819 - __main__ - INFO -   CKNNA All: 0.9475
+2025-07-02 14:16:32,819 - __main__ - INFO -   Cosine Similarity Sparse: 0.8616
+2025-07-02 14:16:32,819 - __main__ - INFO -   MAE Distance Sparse: 1.5173
+2025-07-02 14:16:32,819 - __main__ - INFO -   Cosine Similarity All: 0.9941
+2025-07-02 14:16:32,819 - __main__ - INFO -   MAE Distance All: 0.3089
+2025-07-02 14:16:32,819 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:16:32,819 - __main__ - INFO -   Sparsity All: 0.4916
+2025-07-02 14:16:32,819 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001980
+2025-07-02 14:16:32,819 - __main__ - INFO - Epoch 6/10
+Training:  11%|███████▎                                                           | 34/313 [00:06<00:51,  5.46it/s]2025-07-02 14:16:39,367 - __main__ - INFO - Epoch: 6, Step: 34, Loss: 0.086068, Recon Loss: 0.254768, Sparse Loss: 23.303764
+2025-07-02 14:16:39,367 - __main__ - INFO - FVU Sparse: 0.2548, FVU All: 0.0122
+2025-07-02 14:16:39,367 - __main__ - INFO - CKNNA Sparse: 0.7283, CKNNA All: 0.9451
+2025-07-02 14:16:39,367 - __main__ - INFO - Cosine Similarity Sparse: 0.8637, MAE Distance Sparse: 1.5068
+2025-07-02 14:16:39,367 - __main__ - INFO - Cosine Similarity All: 0.9941, MAE Distance All: 0.3088
+2025-07-02 14:16:39,367 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4926
+2025-07-02 14:16:39,367 - __main__ - INFO - Orthogonal Decoder Loss: 0.001979
+Training:  43%|████████████████████████████▎                                     | 134/313 [00:24<00:32,  5.48it/s]2025-07-02 14:16:57,703 - __main__ - INFO - Epoch: 6, Step: 134, Loss: 0.084405, Recon Loss: 0.251401, Sparse Loss: 23.114801
+2025-07-02 14:16:57,704 - __main__ - INFO - FVU Sparse: 0.2514, FVU All: 0.0119
+2025-07-02 14:16:57,704 - __main__ - INFO - CKNNA Sparse: 0.7366, CKNNA All: 0.9466
+2025-07-02 14:16:57,704 - __main__ - INFO - Cosine Similarity Sparse: 0.8656, MAE Distance Sparse: 1.4943
+2025-07-02 14:16:57,704 - __main__ - INFO - Cosine Similarity All: 0.9942, MAE Distance All: 0.3046
+2025-07-02 14:16:57,704 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4963
+2025-07-02 14:16:57,704 - __main__ - INFO - Orthogonal Decoder Loss: 0.001977
+Training:  75%|█████████████████████████████████████████████████▎                | 234/313 [00:43<00:14,  5.47it/s]2025-07-02 14:17:16,158 - __main__ - INFO - Epoch: 6, Step: 234, Loss: 0.082942, Recon Loss: 0.247724, Sparse Loss: 22.999849
+2025-07-02 14:17:16,158 - __main__ - INFO - FVU Sparse: 0.2477, FVU All: 0.0117
+2025-07-02 14:17:16,158 - __main__ - INFO - CKNNA Sparse: 0.7371, CKNNA All: 0.9445
+2025-07-02 14:17:16,158 - __main__ - INFO - Cosine Similarity Sparse: 0.8676, MAE Distance Sparse: 1.4833
+2025-07-02 14:17:16,158 - __main__ - INFO - Cosine Similarity All: 0.9943, MAE Distance All: 0.3014
+2025-07-02 14:17:16,158 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.4987
+2025-07-02 14:17:16,158 - __main__ - INFO - Orthogonal Decoder Loss: 0.001974
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:57<00:00,  5.42it/s]
+2025-07-02 14:17:30,517 - __main__ - INFO - Epoch: 6, Learning Rate: 0.000100, Loss: 0.081842, Recon Loss: 0.245660, Sparse Loss: 22.865370, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.63it/s]
+2025-07-02 14:17:32,478 - __main__ - INFO - Evaluation results:
+2025-07-02 14:17:32,478 - __main__ - INFO -   Loss: 0.011662
+2025-07-02 14:17:32,478 - __main__ - INFO -   Reconstruction Loss: 0.011662
+2025-07-02 14:17:32,478 - __main__ - INFO -   Sparsity Loss: 22.926779
+2025-07-02 14:17:32,478 - __main__ - INFO -   FVU Sparse: 0.2463
+2025-07-02 14:17:32,478 - __main__ - INFO -   FVU All: 0.0117
+2025-07-02 14:17:32,478 - __main__ - INFO -   CKNNA Sparse: 0.7522
+2025-07-02 14:17:32,478 - __main__ - INFO -   CKNNA All: 0.9486
+2025-07-02 14:17:32,478 - __main__ - INFO -   Cosine Similarity Sparse: 0.8684
+2025-07-02 14:17:32,478 - __main__ - INFO -   MAE Distance Sparse: 1.4807
+2025-07-02 14:17:32,478 - __main__ - INFO -   Cosine Similarity All: 0.9943
+2025-07-02 14:17:32,478 - __main__ - INFO -   MAE Distance All: 0.3017
+2025-07-02 14:17:32,478 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:17:32,478 - __main__ - INFO -   Sparsity All: 0.5009
+2025-07-02 14:17:32,478 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001972
+2025-07-02 14:17:32,479 - __main__ - INFO - Epoch 7/10
+Training:   7%|████▍                                                              | 21/313 [00:03<00:53,  5.44it/s]2025-07-02 14:17:36,605 - __main__ - INFO - Epoch: 7, Step: 21, Loss: 0.081227, Recon Loss: 0.243406, Sparse Loss: 22.725597
+2025-07-02 14:17:36,606 - __main__ - INFO - FVU Sparse: 0.2434, FVU All: 0.0117
+2025-07-02 14:17:36,606 - __main__ - INFO - CKNNA Sparse: 0.7486, CKNNA All: 0.9451
+2025-07-02 14:17:36,606 - __main__ - INFO - Cosine Similarity Sparse: 0.8702, MAE Distance Sparse: 1.4683
+2025-07-02 14:17:36,606 - __main__ - INFO - Cosine Similarity All: 0.9943, MAE Distance All: 0.3011
+2025-07-02 14:17:36,606 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5020
+2025-07-02 14:17:36,606 - __main__ - INFO - Orthogonal Decoder Loss: 0.001971
+Training:  39%|█████████████████████████▌                                        | 121/313 [00:22<00:37,  5.17it/s]2025-07-02 14:17:55,169 - __main__ - INFO - Number of dead neurons: 0
+2025-07-02 14:17:55,170 - __main__ - INFO - Epoch: 7, Step: 121, Loss: 0.080373, Recon Loss: 0.242491, Sparse Loss: 22.697664
+2025-07-02 14:17:55,170 - __main__ - INFO - FVU Sparse: 0.2425, FVU All: 0.0113
+2025-07-02 14:17:55,170 - __main__ - INFO - CKNNA Sparse: 0.7554, CKNNA All: 0.9522
+2025-07-02 14:17:55,170 - __main__ - INFO - Cosine Similarity Sparse: 0.8706, MAE Distance Sparse: 1.4696
+2025-07-02 14:17:55,170 - __main__ - INFO - Cosine Similarity All: 0.9945, MAE Distance All: 0.2972
+2025-07-02 14:17:55,170 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5050
+2025-07-02 14:17:55,170 - __main__ - INFO - Orthogonal Decoder Loss: 0.001969
+Training:  71%|██████████████████████████████████████████████▌                   | 221/313 [00:40<00:16,  5.43it/s]2025-07-02 14:18:13,656 - __main__ - INFO - Epoch: 7, Step: 221, Loss: 0.078420, Recon Loss: 0.237460, Sparse Loss: 22.516174
+2025-07-02 14:18:13,656 - __main__ - INFO - FVU Sparse: 0.2375, FVU All: 0.0111
+2025-07-02 14:18:13,656 - __main__ - INFO - CKNNA Sparse: 0.7526, CKNNA All: 0.9489
+2025-07-02 14:18:13,656 - __main__ - INFO - Cosine Similarity Sparse: 0.8734, MAE Distance Sparse: 1.4526
+2025-07-02 14:18:13,656 - __main__ - INFO - Cosine Similarity All: 0.9946, MAE Distance All: 0.2939
+2025-07-02 14:18:13,656 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5070
+2025-07-02 14:18:13,656 - __main__ - INFO - Orthogonal Decoder Loss: 0.001966
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:58<00:00,  5.38it/s]
+2025-07-02 14:18:30,610 - __main__ - INFO - Epoch: 7, Learning Rate: 0.000100, Loss: 0.078005, Recon Loss: 0.235768, Sparse Loss: 22.348238, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.90it/s]
+2025-07-02 14:18:32,495 - __main__ - INFO - Evaluation results:
+2025-07-02 14:18:32,496 - __main__ - INFO -   Loss: 0.011154
+2025-07-02 14:18:32,496 - __main__ - INFO -   Reconstruction Loss: 0.011154
+2025-07-02 14:18:32,496 - __main__ - INFO -   Sparsity Loss: 22.464329
+2025-07-02 14:18:32,496 - __main__ - INFO -   FVU Sparse: 0.2369
+2025-07-02 14:18:32,496 - __main__ - INFO -   FVU All: 0.0112
+2025-07-02 14:18:32,496 - __main__ - INFO -   CKNNA Sparse: 0.7617
+2025-07-02 14:18:32,496 - __main__ - INFO -   CKNNA All: 0.9501
+2025-07-02 14:18:32,496 - __main__ - INFO -   Cosine Similarity Sparse: 0.8737
+2025-07-02 14:18:32,496 - __main__ - INFO -   MAE Distance Sparse: 1.4516
+2025-07-02 14:18:32,496 - __main__ - INFO -   Cosine Similarity All: 0.9946
+2025-07-02 14:18:32,496 - __main__ - INFO -   MAE Distance All: 0.2950
+2025-07-02 14:18:32,496 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:18:32,496 - __main__ - INFO -   Sparsity All: 0.5088
+2025-07-02 14:18:32,496 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001964
+2025-07-02 14:18:32,496 - __main__ - INFO - Epoch 8/10
+Training:   3%|█▋                                                                  | 8/313 [00:01<00:56,  5.41it/s]2025-07-02 14:18:34,208 - __main__ - INFO - Epoch: 8, Step: 8, Loss: 0.077168, Recon Loss: 0.234003, Sparse Loss: 22.370432
+2025-07-02 14:18:34,209 - __main__ - INFO - FVU Sparse: 0.2340, FVU All: 0.0111
+2025-07-02 14:18:34,209 - __main__ - INFO - CKNNA Sparse: 0.7508, CKNNA All: 0.9465
+2025-07-02 14:18:34,209 - __main__ - INFO - Cosine Similarity Sparse: 0.8754, MAE Distance Sparse: 1.4383
+2025-07-02 14:18:34,209 - __main__ - INFO - Cosine Similarity All: 0.9946, MAE Distance All: 0.2927
+2025-07-02 14:18:34,209 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5088
+2025-07-02 14:18:34,209 - __main__ - INFO - Orthogonal Decoder Loss: 0.001964
+Training:  35%|██████████████████████▊                                           | 108/313 [00:20<00:37,  5.47it/s]2025-07-02 14:18:52,686 - __main__ - INFO - Epoch: 8, Step: 108, Loss: 0.075110, Recon Loss: 0.228840, Sparse Loss: 22.133949
+2025-07-02 14:18:52,686 - __main__ - INFO - FVU Sparse: 0.2289, FVU All: 0.0108
+2025-07-02 14:18:52,686 - __main__ - INFO - CKNNA Sparse: 0.7647, CKNNA All: 0.9523
+2025-07-02 14:18:52,686 - __main__ - INFO - Cosine Similarity Sparse: 0.8783, MAE Distance Sparse: 1.4243
+2025-07-02 14:18:52,686 - __main__ - INFO - Cosine Similarity All: 0.9948, MAE Distance All: 0.2903
+2025-07-02 14:18:52,686 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5111
+2025-07-02 14:18:52,686 - __main__ - INFO - Orthogonal Decoder Loss: 0.001961
+Training:  66%|███████████████████████████████████████████▊                      | 208/313 [00:38<00:19,  5.46it/s]2025-07-02 14:19:11,076 - __main__ - INFO - Epoch: 8, Step: 208, Loss: 0.075467, Recon Loss: 0.230151, Sparse Loss: 22.112328
+2025-07-02 14:19:11,076 - __main__ - INFO - FVU Sparse: 0.2302, FVU All: 0.0108
+2025-07-02 14:19:11,076 - __main__ - INFO - CKNNA Sparse: 0.7638, CKNNA All: 0.9529
+2025-07-02 14:19:11,076 - __main__ - INFO - Cosine Similarity Sparse: 0.8775, MAE Distance Sparse: 1.4264
+2025-07-02 14:19:11,076 - __main__ - INFO - Cosine Similarity All: 0.9948, MAE Distance All: 0.2892
+2025-07-02 14:19:11,076 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5137
+2025-07-02 14:19:11,076 - __main__ - INFO - Orthogonal Decoder Loss: 0.001959
+Training:  98%|████████████████████████████████████████████████████████████████▉ | 308/313 [00:56<00:00,  5.48it/s]2025-07-02 14:19:29,541 - __main__ - INFO - Epoch: 8, Step: 308, Loss: 0.074258, Recon Loss: 0.227086, Sparse Loss: 21.973137
+2025-07-02 14:19:29,541 - __main__ - INFO - FVU Sparse: 0.2271, FVU All: 0.0108
+2025-07-02 14:19:29,541 - __main__ - INFO - CKNNA Sparse: 0.7676, CKNNA All: 0.9508
+2025-07-02 14:19:29,541 - __main__ - INFO - Cosine Similarity Sparse: 0.8793, MAE Distance Sparse: 1.4171
+2025-07-02 14:19:29,541 - __main__ - INFO - Cosine Similarity All: 0.9948, MAE Distance All: 0.2886
+2025-07-02 14:19:29,542 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5152
+2025-07-02 14:19:29,542 - __main__ - INFO - Orthogonal Decoder Loss: 0.001957
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:57<00:00,  5.42it/s]
+2025-07-02 14:19:30,295 - __main__ - INFO - Epoch: 8, Learning Rate: 0.000100, Loss: 0.074556, Recon Loss: 0.228615, Sparse Loss: 22.047510, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.93it/s]
+2025-07-02 14:19:32,171 - __main__ - INFO - Evaluation results:
+2025-07-02 14:19:32,171 - __main__ - INFO -   Loss: 0.010734
+2025-07-02 14:19:32,171 - __main__ - INFO -   Reconstruction Loss: 0.010734
+2025-07-02 14:19:32,171 - __main__ - INFO -   Sparsity Loss: 22.113539
+2025-07-02 14:19:32,171 - __main__ - INFO -   FVU Sparse: 0.2292
+2025-07-02 14:19:32,171 - __main__ - INFO -   FVU All: 0.0107
+2025-07-02 14:19:32,171 - __main__ - INFO -   CKNNA Sparse: 0.7713
+2025-07-02 14:19:32,171 - __main__ - INFO -   CKNNA All: 0.9508
+2025-07-02 14:19:32,171 - __main__ - INFO -   Cosine Similarity Sparse: 0.8781
+2025-07-02 14:19:32,172 - __main__ - INFO -   MAE Distance Sparse: 1.4274
+2025-07-02 14:19:32,172 - __main__ - INFO -   Cosine Similarity All: 0.9948
+2025-07-02 14:19:32,172 - __main__ - INFO -   MAE Distance All: 0.2893
+2025-07-02 14:19:32,172 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:19:32,172 - __main__ - INFO -   Sparsity All: 0.5151
+2025-07-02 14:19:32,172 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001957
+2025-07-02 14:19:32,172 - __main__ - INFO - Epoch 9/10
+Training:  30%|████████████████████▎                                              | 95/313 [00:17<00:40,  5.44it/s]2025-07-02 14:19:50,001 - __main__ - INFO - Epoch: 9, Step: 95, Loss: 0.073544, Recon Loss: 0.225394, Sparse Loss: 21.875957
+2025-07-02 14:19:50,001 - __main__ - INFO - FVU Sparse: 0.2254, FVU All: 0.0107
+2025-07-02 14:19:50,001 - __main__ - INFO - CKNNA Sparse: 0.7612, CKNNA All: 0.9473
+2025-07-02 14:19:50,001 - __main__ - INFO - Cosine Similarity Sparse: 0.8802, MAE Distance Sparse: 1.4142
+2025-07-02 14:19:50,001 - __main__ - INFO - Cosine Similarity All: 0.9949, MAE Distance All: 0.2877
+2025-07-02 14:19:50,001 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5167
+2025-07-02 14:19:50,001 - __main__ - INFO - Orthogonal Decoder Loss: 0.001955
+Training:  62%|█████████████████████████████████████████                         | 195/313 [00:36<00:21,  5.41it/s]2025-07-02 14:20:08,471 - __main__ - INFO - Epoch: 9, Step: 195, Loss: 0.072783, Recon Loss: 0.223453, Sparse Loss: 21.798311
+2025-07-02 14:20:08,471 - __main__ - INFO - FVU Sparse: 0.2235, FVU All: 0.0105
+2025-07-02 14:20:08,471 - __main__ - INFO - CKNNA Sparse: 0.7650, CKNNA All: 0.9526
+2025-07-02 14:20:08,471 - __main__ - INFO - Cosine Similarity Sparse: 0.8813, MAE Distance Sparse: 1.4057
+2025-07-02 14:20:08,471 - __main__ - INFO - Cosine Similarity All: 0.9949, MAE Distance All: 0.2858
+2025-07-02 14:20:08,471 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5187
+2025-07-02 14:20:08,471 - __main__ - INFO - Orthogonal Decoder Loss: 0.001954
+Training:  94%|██████████████████████████████████████████████████████████████▏   | 295/313 [00:54<00:03,  5.48it/s]2025-07-02 14:20:26,864 - __main__ - INFO - Epoch: 9, Step: 295, Loss: 0.071638, Recon Loss: 0.220686, Sparse Loss: 21.739601
+2025-07-02 14:20:26,865 - __main__ - INFO - FVU Sparse: 0.2207, FVU All: 0.0103
+2025-07-02 14:20:26,865 - __main__ - INFO - CKNNA Sparse: 0.7681, CKNNA All: 0.9499
+2025-07-02 14:20:26,865 - __main__ - INFO - Cosine Similarity Sparse: 0.8828, MAE Distance Sparse: 1.3997
+2025-07-02 14:20:26,865 - __main__ - INFO - Cosine Similarity All: 0.9950, MAE Distance All: 0.2835
+2025-07-02 14:20:26,865 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5196
+2025-07-02 14:20:26,865 - __main__ - INFO - Orthogonal Decoder Loss: 0.001952
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:57<00:00,  5.40it/s]
+2025-07-02 14:20:30,084 - __main__ - INFO - Epoch: 9, Learning Rate: 0.000050, Loss: 0.072060, Recon Loss: 0.222207, Sparse Loss: 21.784384, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.87it/s]
+2025-07-02 14:20:31,979 - __main__ - INFO - Evaluation results:
+2025-07-02 14:20:31,979 - __main__ - INFO -   Loss: 0.010364
+2025-07-02 14:20:31,979 - __main__ - INFO -   Reconstruction Loss: 0.010364
+2025-07-02 14:20:31,979 - __main__ - INFO -   Sparsity Loss: 21.811771
+2025-07-02 14:20:31,979 - __main__ - INFO -   FVU Sparse: 0.2227
+2025-07-02 14:20:31,979 - __main__ - INFO -   FVU All: 0.0104
+2025-07-02 14:20:31,979 - __main__ - INFO -   CKNNA Sparse: 0.7782
+2025-07-02 14:20:31,979 - __main__ - INFO -   CKNNA All: 0.9520
+2025-07-02 14:20:31,979 - __main__ - INFO -   Cosine Similarity Sparse: 0.8817
+2025-07-02 14:20:31,979 - __main__ - INFO -   MAE Distance Sparse: 1.4066
+2025-07-02 14:20:31,979 - __main__ - INFO -   Cosine Similarity All: 0.9950
+2025-07-02 14:20:31,979 - __main__ - INFO -   MAE Distance All: 0.2841
+2025-07-02 14:20:31,980 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:20:31,980 - __main__ - INFO -   Sparsity All: 0.5202
+2025-07-02 14:20:31,980 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001952
+2025-07-02 14:20:31,980 - __main__ - INFO - Epoch 10/10
+Training:  26%|█████████████████▌                                                 | 82/313 [00:15<00:42,  5.44it/s]2025-07-02 14:20:47,369 - __main__ - INFO - Epoch: 10, Step: 82, Loss: 0.070996, Recon Loss: 0.218928, Sparse Loss: 21.633186
+2025-07-02 14:20:47,369 - __main__ - INFO - FVU Sparse: 0.2190, FVU All: 0.0103
+2025-07-02 14:20:47,369 - __main__ - INFO - CKNNA Sparse: 0.7743, CKNNA All: 0.9524
+2025-07-02 14:20:47,369 - __main__ - INFO - Cosine Similarity Sparse: 0.8839, MAE Distance Sparse: 1.3924
+2025-07-02 14:20:47,369 - __main__ - INFO - Cosine Similarity All: 0.9950, MAE Distance All: 0.2816
+2025-07-02 14:20:47,369 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5203
+2025-07-02 14:20:47,369 - __main__ - INFO - Orthogonal Decoder Loss: 0.001951
+Training:  58%|██████████████████████████████████████▍                           | 182/313 [00:33<00:24,  5.43it/s]2025-07-02 14:21:05,875 - __main__ - INFO - Number of dead neurons: 0
+2025-07-02 14:21:05,875 - __main__ - INFO - Epoch: 10, Step: 182, Loss: 0.071010, Recon Loss: 0.219034, Sparse Loss: 21.593832
+2025-07-02 14:21:05,875 - __main__ - INFO - FVU Sparse: 0.2191, FVU All: 0.0103
+2025-07-02 14:21:05,875 - __main__ - INFO - CKNNA Sparse: 0.7764, CKNNA All: 0.9514
+2025-07-02 14:21:05,875 - __main__ - INFO - Cosine Similarity Sparse: 0.8838, MAE Distance Sparse: 1.3934
+2025-07-02 14:21:05,875 - __main__ - INFO - Cosine Similarity All: 0.9950, MAE Distance All: 0.2826
+2025-07-02 14:21:05,875 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5205
+2025-07-02 14:21:05,876 - __main__ - INFO - Orthogonal Decoder Loss: 0.001951
+Training:  90%|███████████████████████████████████████████████████████████▍      | 282/313 [00:52<00:05,  5.26it/s]2025-07-02 14:21:24,375 - __main__ - INFO - Epoch: 10, Step: 282, Loss: 0.070389, Recon Loss: 0.217802, Sparse Loss: 21.568874
+2025-07-02 14:21:24,375 - __main__ - INFO - FVU Sparse: 0.2178, FVU All: 0.0101
+2025-07-02 14:21:24,375 - __main__ - INFO - CKNNA Sparse: 0.7765, CKNNA All: 0.9527
+2025-07-02 14:21:24,375 - __main__ - INFO - Cosine Similarity Sparse: 0.8845, MAE Distance Sparse: 1.3890
+2025-07-02 14:21:24,375 - __main__ - INFO - Cosine Similarity All: 0.9951, MAE Distance All: 0.2799
+2025-07-02 14:21:24,375 - __main__ - INFO - Sparsity Sparse: 0.9844, Sparsity All: 0.5212
+2025-07-02 14:21:24,375 - __main__ - INFO - Orthogonal Decoder Loss: 0.001950
+Training: 100%|██████████████████████████████████████████████████████████████████| 313/313 [00:57<00:00,  5.41it/s]
+2025-07-02 14:21:29,885 - __main__ - INFO - Epoch: 10, Learning Rate: 0.000000, Loss: 0.070634, Recon Loss: 0.218433, Sparse Loss: 21.533791, Dead neurons: 0
+Evaluation: 100%|██████████████████████████████████████████████████████████████████| 13/13 [00:01<00:00,  6.83it/s]
+2025-07-02 14:21:31,790 - __main__ - INFO - Evaluation results:
+2025-07-02 14:21:31,790 - __main__ - INFO -   Loss: 0.010134
+2025-07-02 14:21:31,790 - __main__ - INFO -   Reconstruction Loss: 0.010134
+2025-07-02 14:21:31,790 - __main__ - INFO -   Sparsity Loss: 21.693786
+2025-07-02 14:21:31,790 - __main__ - INFO -   FVU Sparse: 0.2196
+2025-07-02 14:21:31,790 - __main__ - INFO -   FVU All: 0.0101
+2025-07-02 14:21:31,790 - __main__ - INFO -   CKNNA Sparse: 0.7825
+2025-07-02 14:21:31,790 - __main__ - INFO -   CKNNA All: 0.9528
+2025-07-02 14:21:31,791 - __main__ - INFO -   Cosine Similarity Sparse: 0.8835
+2025-07-02 14:21:31,791 - __main__ - INFO -   MAE Distance Sparse: 1.3968
+2025-07-02 14:21:31,791 - __main__ - INFO -   Cosine Similarity All: 0.9951
+2025-07-02 14:21:31,791 - __main__ - INFO -   MAE Distance All: 0.2806
+2025-07-02 14:21:31,791 - __main__ - INFO -   Sparsity Sparse: 0.9844
+2025-07-02 14:21:31,791 - __main__ - INFO -   Sparsity All: 0.5213
+2025-07-02 14:21:31,791 - __main__ - INFO -   Orthogonal Decoder Loss: 0.001950
+2025-07-02 14:21:31,812 - __main__ - INFO - Model saved to 4096_512_TopKReLU_64_UW_False_False_0.0_imagenet_ViT-B~32_train_image_1281167_512.pth

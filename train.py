@@ -4,6 +4,8 @@ import argparse
 import logging
 from tqdm import tqdm
 from dataclasses import asdict
+import os
+import datetime
 
 from metrics import calculate_similarity_metrics, identify_dead_neurons, orthogonal_decoder, cknna, explained_variance
 from utils import SAEDataset, set_seed, get_device, geometric_median, calculate_vector_mean, LinearDecayLR, CosineWarmupScheduler
@@ -19,6 +21,16 @@ including standard SAEs with different activation functions and Matryoshka SAEs 
 feature hierarchies. It handles training, evaluation, and model saving with configurable
 hyperparameters.
 """
+
+# Prepare log directory and filename
+log_dir = os.path.join(os.path.dirname(__file__), 'logs')
+os.makedirs(log_dir, exist_ok=True)
+
+# Prepare log filename with key info and timestamp
+now = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+# Use placeholders for args, will be replaced after parse_args()
+log_file_stub = f'train_{{model}}_{{activation}}_{{dataset}}_{now}.log'
+log_file_path = os.path.join(log_dir, log_file_stub)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -186,7 +198,7 @@ def main(args):
     logger.info(f"Evaluation dataset mean center: {eval_ds.mean.mean()}, Scaling factor: {eval_ds.scaling_factor} with target norm {eval_ds.target_norm}")
     assert train_ds.vector_size == eval_ds.vector_size, "Training and evaluation datasets must have the same embedding size"
     
-    if dataset_second_modality is not None:
+    if args.dataset_second_modality is not None:
         eval_ds_second = SAEDataset(
             args.dataset_second_modality,
             dtype=cfg.training.dtype,
@@ -318,7 +330,7 @@ def main(args):
         num_workers=cfg.training.num_workers, 
         shuffle=False
     )
-    if dataset_second_modality is not None:
+    if args.dataset_second_modality is not None:
         eval_loader_second = torch.utils.data.DataLoader(
             eval_ds_second,
             batch_size=cfg.training.batch_size,
@@ -430,7 +442,7 @@ def main(args):
         # Evaluate the model on the validation set
         eval(model, eval_loader, loss_fn, device, cfg)
 
-        if dataset_second_modality is not None:
+        if args.dataset_second_modality is not None:
             # Evaluate on the second modality dataset
             eval(model, eval_loader_second, loss_fn, device, cfg)
     
@@ -467,4 +479,20 @@ def main(args):
     
 if __name__ == "__main__":
     args = parse_args()
+    # Fill in log file name with actual arguments
+    dataset_name = os.path.basename(args.dataset_train).split('.')[0]
+    log_file_name = f"train_{args.model}_{args.activation}_{dataset_name}_{now}.log"
+    log_file_path = os.path.join(log_dir, log_file_name)
+    # Reconfigure logging to use the file handler
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler(log_file_path, mode='w')
+        ]
+    )
+    logger = logging.getLogger(__name__)
     main(args)
